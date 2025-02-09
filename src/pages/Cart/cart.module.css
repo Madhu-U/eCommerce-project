@@ -1,0 +1,17 @@
+.cart_container {
+  background-color: var(--clr-teal-light);
+  padding: 2rem;
+
+  .cart_items {
+    padding: 2rem;
+    margin-block: 1rem;
+    width: 80%;
+    border-radius: 1rem;
+    background-color: var(--clr-light);
+    h1 {
+      border-bottom: 1px solid var(--clr-dark);
+      padding-bottom: 1rem;
+      color: var(--clr-dark);
+    }
+  }
+}

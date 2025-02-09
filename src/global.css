@@ -1,0 +1,21 @@
+:root {
+  /* colors */
+  --clr-dark: #272343;
+  --clr-light: #ffffff;
+  --clr-teal-light: #e3f6f5;
+  --clr-teal: #bae8e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--clr-teal-light);
+}
+
+.container {
+  display: flex;
+  min-width: 98%;
+}

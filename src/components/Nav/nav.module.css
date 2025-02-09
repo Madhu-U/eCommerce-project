@@ -1,0 +1,43 @@
+nav {
+  width: 10%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav ul {
+  position: fixed;
+  background-color: var(--clr-light);
+  display: block;
+  width: 6%;
+  left: 1%;
+  text-align: center;
+  top: 20%;
+  height: 59vh;
+  border-radius: 50rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  .links {
+    padding-block: 1rem;
+  }
+
+  li {
+    color: var(--clr-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    list-style: none;
+    font-size: 0.8rem;
+    padding-block: 1.2rem;
+  }
+}
+
+.links:hover {
+  background-color: var(--clr-dark);
+  li {
+    color: var(--clr-teal-light);
+  }
+}
+
+& div:last-child {
+  width: 90%;
+}

@@ -1,0 +1,8 @@
+.products__container {
+  width: 100%;
+  padding-block: 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
