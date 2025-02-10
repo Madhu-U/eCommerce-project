@@ -1,47 +1,57 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import styles from "./nav.module.css";
+import Logo from "../../assets/images/CornerCartLogo.png";
 
 const Nav = () => {
+  const logoNavigate = useNavigate();
   return (
     <>
       <nav>
+        <img
+          src={Logo}
+          alt="Corner Cart"
+          onClick={() => {
+            logoNavigate("/");
+          }}
+        />
         <ul>
-          <Link
+          <NavLink
             to="/"
-            className={styles.links}
+            end
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
             style={{ textDecoration: "none" }}
           >
             <li>Home</li>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/products"
-            className={styles.links}
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
             style={{ textDecoration: "none" }}
           >
             <li>Products</li>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/cart"
-            className={styles.links}
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
             style={{ textDecoration: "none" }}
           >
             <li>Cart</li>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/login"
-            className={styles.links}
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
             style={{ textDecoration: "none" }}
           >
             <li>Login</li>
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/signup"
-            className={styles.links}
+            className={({ isActive }) => (isActive ? styles.activeLink : "")}
             style={{ textDecoration: "none" }}
           >
             <li>Signup</li>
-          </Link>
+          </NavLink>
         </ul>
       </nav>
     </>

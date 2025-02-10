@@ -4,6 +4,13 @@
   --clr-light: #ffffff;
   --clr-teal-light: #e3f6f5;
   --clr-teal: #bae8e8;
+
+  /* Typography */
+  --ff-main: "Raleway", serif;
+  --ff-accent: "Poiret One", serif;
+  --fw-bold: 700;
+  --fw-medium: 400;
+  --fw-light-main: 300;
 }
 
 * {
@@ -11,11 +18,23 @@
   padding: 0;
 }
 
+::selection {
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
+}
+
 body {
   background-color: var(--clr-teal-light);
 }
 
-.container {
+.app_container {
   display: flex;
-  min-width: 98%;
+  flex-direction: column;
+}
+
+.content_container {
+  display: flex;
+  gap: 1rem;
+  padding-right: 2rem;
+  position: relative;
 }

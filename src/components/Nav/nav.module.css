@@ -1,25 +1,28 @@
 nav {
   width: 10%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  img {
+    width: 100px;
+    position: fixed;
+    top: 5%;
+    left: 1%;
+    cursor: pointer;
+  }
 }
 
 nav ul {
   position: fixed;
   background-color: var(--clr-light);
-  display: block;
   width: 6%;
+  top: 20%;
   left: 1%;
   text-align: center;
-  top: 20%;
   height: 59vh;
   border-radius: 50rem;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  .links {
-    padding-block: 1rem;
-  }
 
   li {
     color: var(--clr-dark);
@@ -30,14 +33,20 @@ nav ul {
     padding-block: 1.2rem;
   }
 }
+a {
+  padding-block: 1rem;
+}
 
-.links:hover {
+a:hover {
   background-color: var(--clr-dark);
   li {
     color: var(--clr-teal-light);
   }
 }
 
-& div:last-child {
-  width: 90%;
+.activeLink {
+  background-color: var(--clr-dark);
+  li {
+    color: var(--clr-teal-light);
+  }
 }

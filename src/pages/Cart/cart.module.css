@@ -1,5 +1,4 @@
 .cart_container {
-  background-color: var(--clr-teal-light);
   padding: 2rem;
 
   .cart_items {
@@ -8,9 +7,57 @@
     width: 80%;
     border-radius: 1rem;
     background-color: var(--clr-light);
+    margin-inline: auto;
+    font-family: var(--ff-main);
+    color: var(--clr-dark);
+
     h1 {
       border-bottom: 1px solid var(--clr-dark);
       padding-bottom: 1rem;
+    }
+    h2 {
+      margin-top: 1.5rem;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--clr-dark);
+      width: 75%;
+      margin-inline: auto;
+      h2 {
+        margin-left: auto;
+        margin-right: 3rem;
+      }
+      p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 800;
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .pay {
+    width: 180px;
+    height: 50px;
+    border-radius: 50rem;
+    border: none;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    display: block;
+    margin-left: auto;
+    margin-right: 10%;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+    &:hover {
+      scale: 1.1;
+      cursor: pointer;
+      background-color: var(--clr-light);
+      border: 1px solid var(--clr-dark);
       color: var(--clr-dark);
     }
   }

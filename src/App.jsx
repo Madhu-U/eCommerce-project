@@ -8,14 +8,21 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import Products from "./pages/Products/Products";
 import ProductProvider from "./context/ProductContext";
+import Footer from "./components/Footer/Footer";
+import About from "./pages/About/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import TOS from "./pages/TOS/TOS";
 
 const navRouter = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <Nav></Nav>
-        <Outlet></Outlet>
+        <div className="content_container">
+          <Nav></Nav>
+          <Outlet></Outlet>
+        </div>
+        <Footer></Footer>
       </>
     ),
     children: [
@@ -39,6 +46,18 @@ const navRouter = createBrowserRouter([
         path: "/signup",
         element: <Signup></Signup>,
       },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/privacyPolicy",
+        element: <PrivacyPolicy></PrivacyPolicy>,
+      },
+      {
+        path: "/tos",
+        element: <TOS></TOS>,
+      },
     ],
   },
 ]);
@@ -46,7 +65,7 @@ const navRouter = createBrowserRouter([
 const App = () => {
   return (
     <ProductProvider>
-      <div className="container">
+      <div className="app_container">
         <RouterProvider router={navRouter}></RouterProvider>
       </div>
     </ProductProvider>

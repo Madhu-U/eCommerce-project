@@ -1,0 +1,26 @@
+.about {
+  > * {
+    width: 70%;
+    margin-inline: auto;
+  }
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  h1,
+  h2 {
+    font-family: var(--ff-main);
+    margin-block: 1.5rem 1rem;
+  }
+  p,
+  li {
+    font-family: var(--ff-main);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  hr {
+    height: 1px;
+    border: none;
+    background-color: var(--clr-dark);
+    margin-top: 2rem;
+  }
+}

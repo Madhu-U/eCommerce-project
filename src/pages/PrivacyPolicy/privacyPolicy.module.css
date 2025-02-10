@@ -1,0 +1,23 @@
+.priv {
+  width: 75%;
+  margin-inline: auto;
+  color: var(--clr-dark);
+  padding: 2rem;
+  h1,
+  h2,
+  h3 {
+    font-family: var(--ff-main);
+    margin-block: 1.5rem 1rem;
+  }
+  p,
+  li {
+    font-family: var(--ff-main);
+    margin-block: 1rem;
+  }
+  hr {
+    height: 1px;
+    border: none;
+    background-color: var(--clr-dark);
+    margin-block: 2rem;
+  }
+}

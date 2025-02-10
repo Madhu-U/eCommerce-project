@@ -1,4 +1,4 @@
-.signupForm {
+.loginForm {
   background-color: var(--clr-light);
   width: 40%;
   margin-inline: auto;
@@ -19,6 +19,7 @@
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
+
   .fields {
     display: flex;
     justify-content: space-between;
@@ -31,7 +32,8 @@
       margin-right: 2rem;
     }
   }
-  .submitsp {
+
+  .submit {
     width: 250px;
     height: 40px;
     border-radius: 50rem;

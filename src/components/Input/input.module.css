@@ -1,0 +1,11 @@
+input {
+  width: 250px;
+  height: 40px;
+  border-radius: 50rem;
+  border: 1px solid var(--clr-dark);
+  background-color: var(--clr-light);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  &:focus {
+    outline: 2px solid var(--clr-dark);
+  }
+}

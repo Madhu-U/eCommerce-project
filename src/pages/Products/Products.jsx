@@ -5,7 +5,6 @@ import styles from "./products.module.css";
 
 const Products = () => {
   const { products } = useContext(ProductContext);
-  console.log();
 
   return (
     <div className={styles.products__container}>

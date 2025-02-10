@@ -5,21 +5,32 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  padding-block: 1rem;
   background-color: var(--clr-teal-light);
   border-radius: 1rem;
 
-  > hr {
-    height: 200px;
-    border: none;
-    width: 1px;
-    background-color: rgba(0, 0, 0, 0.3);
-    margin-inline: 2rem;
+  .img > img {
+    display: block;
+    width: 90%;
+    margin-inline: auto;
   }
+
   .info {
     width: 90%;
+    color: var(--clr-dark);
+    h2 {
+      font-family: var(--ff-main);
+      margin-bottom: 0.5rem;
+    }
     .brand {
+      font-family: var(--ff-accent);
       font-style: italic;
       font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .desc {
+      font-family: var(--ff-main);
+      line-height: 1.5;
     }
     button {
       width: 150px;
@@ -41,6 +52,16 @@
     }
   }
   .price_info {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
     width: 15%;
   }
+}
+
+hr {
+  height: 150px;
+  border: none;
+  width: 2px;
+  background-color: var(--clr-dark);
+  margin-inline: 2rem;
 }
