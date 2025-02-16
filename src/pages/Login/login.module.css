@@ -64,4 +64,17 @@
     gap: 1rem;
     justify-content: center;
   }
+
+  span {
+    font-size: 0.7rem;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+    color: red;
+    font-weight: 500;
+    display: block;
+    width: fit-content;
+    margin-inline: auto;
+    margin-bottom: 1rem;
+  }
 }

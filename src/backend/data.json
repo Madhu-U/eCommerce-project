@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "id": "8e60",
+      "fullName": "madhu",
+      "email": "umadh.20@gmai.com",
+      "password": "12345678"
+    },
+    {
+      "id": "4ea6",
+      "fullName": "Madhu U",
+      "email": "email2@gmail.com",
+      "password": "1234567"
+    },
+    {
+      "id": "42f3",
+      "fullName": "abc def",
+      "email": "123@abc.com",
+      "password": "abcd"
+    }
+  ]
+}
