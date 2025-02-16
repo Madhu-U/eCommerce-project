@@ -14,6 +14,7 @@ nav ul {
   position: fixed;
   background-color: var(--clr-light);
   width: 6%;
+  min-width: 85px;
   top: 20%;
   left: 1%;
   text-align: center;
@@ -32,21 +33,21 @@ nav ul {
     font-size: 0.8rem;
     padding-block: 1.2rem;
   }
-}
-a {
-  padding-block: 1rem;
-}
-
-a:hover {
-  background-color: var(--clr-dark);
-  li {
-    color: var(--clr-teal-light);
+  a {
+    padding-block: 1rem;
   }
-}
 
-.activeLink {
-  background-color: var(--clr-dark);
-  li {
-    color: var(--clr-teal-light);
+  a:hover {
+    background-color: var(--clr-dark);
+    li {
+      color: var(--clr-teal-light);
+    }
+  }
+
+  .activeLink {
+    background-color: var(--clr-dark);
+    li {
+      color: var(--clr-teal-light);
+    }
   }
 }

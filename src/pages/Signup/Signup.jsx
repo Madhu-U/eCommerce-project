@@ -9,29 +9,60 @@ const Signup = () => {
     fullName: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
+  const [errorDisplay, setErrorDisplay] = useState({});
 
-  const { fullName, email, password } = signUp;
+  const { fullName, email, password, confirmPassword } = signUp;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSignUp((prev) => ({ ...prev, [name]: value }));
+    if (errorDisplay[name]) {
+      setErrorDisplay((prev) => {
+        const updatedErrors = { ...prev };
+        delete updatedErrors[name];
+        return updatedErrors;
+      });
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     let payload = { fullName, email, password };
-    try {
-      let { data } = await axios.post("http://localhost:5000/user", payload);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
+    let errors = validateFields();
+    if (Object.keys(errors).length === 0) {
+      try {
+        let { data } = await axios.post("http://localhost:5000/user", payload);
+        console.log(data);
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      setErrorDisplay(errors);
     }
   };
 
-  // const validateForm = () =>{
+  const validateFields = () => {
+    let error = {};
+    if (!fullName.trim()) {
+      error["fullName"] = "Name cannot be Empty";
+    }
+    if (!email.trim()) {
+      error["email"] = "Email cannot be empty";
+    }
+    if (!password.trim()) {
+      error["password"] = "Password cannot be empty";
+    }
+    if (!confirmPassword.trim()) {
+      error["confirmPassword"] = "Password cannot be empty";
+    }
 
-  // }
+    if (password !== confirmPassword) {
+      error["passwordMismatch"] = "Passwords do not match";
+    }
+    return error;
+  };
 
   return (
     <form className={styles.signupForm} onSubmit={handleSubmit}>
@@ -50,6 +81,8 @@ const Signup = () => {
           handle={handleChange}
         ></Input>
       </div>
+      {errorDisplay["fullName"] && <span>{errorDisplay["fullName"]}</span>}
+
       <div className={styles.fields}>
         <Label forValue={"email"} name={"Email*"}></Label>
         <Input
@@ -60,6 +93,7 @@ const Signup = () => {
           handle={handleChange}
         ></Input>
       </div>
+      {errorDisplay["email"] && <span>{errorDisplay["email"]}</span>}
       <div className={styles.fields}>
         <Label forValue={"pwd"} name={"Password*"}></Label>
         <Input
@@ -70,14 +104,27 @@ const Signup = () => {
           handle={handleChange}
         ></Input>
       </div>
+      {errorDisplay["password"] && <span>{errorDisplay["password"]}</span>}
       <div className={styles.fields}>
         <Label forValue={"pwd"} name={"Confirm Password*"}></Label>
-        <Input type={"password"} idName={"pwd"} name="confirmPassword"></Input>
+        <Input
+          type={"password"}
+          idName={"pwd"}
+          name="confirmPassword"
+          value={confirmPassword}
+          handle={handleChange}
+        ></Input>
       </div>
+      {errorDisplay["confirmPassword"] && (
+        <span>{errorDisplay["confirmPassword"]}</span>
+      )}
       <input type="submit" value="Submit" className={styles.submitsp} />
+      {errorDisplay["passwordMismatch"] && (
+        <span>{errorDisplay["passwordMismatch"]}</span>
+      )}
       <div className={styles.reset}>
-        <p>Don’t have an account?</p>
-        <a href="#">Sign up now</a>
+        <p>Already have an account?</p>
+        <a href="#">Login now</a>
       </div>
     </form>
   );

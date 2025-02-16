@@ -22,7 +22,8 @@ const CartItem = ({ productData }) => {
         <hr />
         <div className={styles.info}>
           <h2>{title}</h2>
-          <p className={styles.brand}>By {brand}</p>
+          {brand && <p className={styles.brand}>By {brand}</p>}
+
           <p className={styles.desc}>{description}</p>
           <button
             className={isInCart ? styles.in_cart : styles.not_in_cart}
