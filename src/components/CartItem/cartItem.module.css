@@ -1,22 +1,17 @@
 .cart_info {
-  margin-block: 1rem;
-  width: 80%;
-  margin-inline: auto;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding-block: 1rem;
+  width: 250px;
+  text-align: center;
   background-color: var(--clr-teal-light);
   border-radius: 1rem;
+  padding-inline: 1rem;
 
   .img > img {
     display: block;
-    width: 90%;
+    width: 70%;
     margin-inline: auto;
   }
 
   .info {
-    width: 90%;
     color: var(--clr-dark);
     h2 {
       font-family: var(--ff-main);
@@ -31,6 +26,7 @@
     .desc {
       font-family: var(--ff-main);
       line-height: 1.5;
+      font-size: 0.8rem;
     }
     button {
       width: 150px;
@@ -54,14 +50,23 @@
   .price_info {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: 700;
-    width: 15%;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    margin-block: 1rem;
+    > p:nth-of-type(1) {
+      font-weight: 400;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
   }
 }
 
 hr {
-  height: 150px;
+  width: 100%;
   border: none;
-  width: 2px;
-  background-color: var(--clr-dark);
-  margin-inline: 2rem;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-block: 1rem;
 }

@@ -29,11 +29,13 @@ const CartItem = ({ productData }) => {
             className={isInCart ? styles.in_cart : styles.not_in_cart}
             onClick={handleClick}
           >
-            {isInCart ? "In Cart" : "Add to Cart"}
+            {isInCart ? "Remove From Cart" : "Add to Cart"}
           </button>
         </div>
         <hr />
-        <div className={styles.price_info}>{priceINR}</div>
+        <div className={styles.price_info}>
+          <p>Price:</p> <p>{priceINR}</p>
+        </div>
       </div>
     </>
   );

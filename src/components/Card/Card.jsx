@@ -41,7 +41,7 @@ const Card = ({ productData }) => {
             className={isInCart ? styles.not_in_cart : styles.in_cart}
             onClick={handleClick}
           >
-            {isInCart ? "In Cart" : "Add to Cart"}
+            {isInCart ? "Remove From Cart" : "Add to Cart"}
           </button>
         }
       </div>

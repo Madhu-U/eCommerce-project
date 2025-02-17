@@ -12,6 +12,7 @@ import Footer from "./components/Footer/Footer";
 import About from "./pages/About/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
 import TOS from "./pages/TOS/TOS";
+import Payment from "./pages/Payment/Payment";
 
 const navRouter = createBrowserRouter([
   {
@@ -57,6 +58,10 @@ const navRouter = createBrowserRouter([
       {
         path: "/tos",
         element: <TOS></TOS>,
+      },
+      {
+        path: "/payment",
+        element: <Payment></Payment>,
       },
     ],
   },
