@@ -3,6 +3,7 @@ import styles from "./signup.module.css";
 import Input from "../../components/Input/Input";
 import Label from "../../components/Label/Label";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [signUp, setSignUp] = useState({
@@ -12,8 +13,9 @@ const Signup = () => {
     confirmPassword: "",
   });
   const [errorDisplay, setErrorDisplay] = useState({});
-
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
   const { fullName, email, password, confirmPassword } = signUp;
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,14 +28,17 @@ const Signup = () => {
       });
     }
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let payload = { fullName, email, password };
     let errors = validateFields();
+    let payload = { fullName, email, password };
     if (Object.keys(errors).length === 0) {
       try {
         let { data } = await axios.post("http://localhost:5000/user", payload);
+        setSignUpSuccess(!signUpSuccess);
+        setTimeout(() => {
+          navigate("/login");
+        }, 1000);
         console.log(data);
       } catch (error) {
         console.log(error);
@@ -82,7 +87,6 @@ const Signup = () => {
         ></Input>
       </div>
       {errorDisplay["fullName"] && <span>{errorDisplay["fullName"]}</span>}
-
       <div className={styles.fields}>
         <Label forValue={"email"} name={"Email*"}></Label>
         <Input
@@ -122,6 +126,10 @@ const Signup = () => {
       {errorDisplay["passwordMismatch"] && (
         <span>{errorDisplay["passwordMismatch"]}</span>
       )}
+      {signUpSuccess && (
+        <div className={styles.success}>Sign Up Successful</div>
+      )}
+
       <div className={styles.reset}>
         <p>Already have an account?</p>
         <a href="#">Login now</a>

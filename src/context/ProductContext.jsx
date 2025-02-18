@@ -1,12 +1,13 @@
 import React, { createContext, useState } from "react";
 import data from "../assets/api.json";
+import { useNavigate } from "react-router-dom";
 
 export const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(data);
-
   const [cart, setCart] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const toggleCartItem = (product) => {
     const isInCart = cart.find((item) => item.id === product.id);
@@ -18,7 +19,15 @@ const ProductProvider = ({ children }) => {
   };
 
   return (
-    <ProductContext.Provider value={{ products, cart, toggleCartItem }}>
+    <ProductContext.Provider
+      value={{
+        products,
+        cart,
+        toggleCartItem,
+        loggedIn,
+        setLoggedIn,
+      }}
+    >
       {children}
     </ProductContext.Provider>
   );

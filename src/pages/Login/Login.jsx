@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Label from "../../components/Label/Label";
 import Input from "../../components/Input/Input";
 import styles from "./login.module.css";
 import axios from "axios";
+import { ProductContext } from "../../context/ProductContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loginValues, setLoginValues] = useState({
@@ -12,7 +14,11 @@ const Login = () => {
 
   const [users, setUsers] = useState([]);
   const [errorDisplay, setErrorDisplay] = useState({});
+  const [signUpSuccess, setSignUpSuccess] = useState(false);
+
   const { email, password } = loginValues;
+  const { setLoggedIn } = useContext(ProductContext);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,7 +71,12 @@ const Login = () => {
     if (Object.keys(errors).length === 0) {
       const submitStatus = checkLogin();
       if (submitStatus) {
+        setLoggedIn(true);
+        setSignUpSuccess(!signUpSuccess);
         console.log("Login successful");
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       } else {
         setErrorDisplay((prev) => ({
           ...prev,
@@ -121,6 +132,9 @@ const Login = () => {
       {errorDisplay["password"] && <span>{errorDisplay["password"]}</span>}
       <input type="submit" value="Submit" className={styles.submit} />
       {errorDisplay["submit"] && <span>{errorDisplay["submit"]}</span>}
+      {signUpSuccess && (
+        <div className={styles.success}>Sign Up Successful</div>
+      )}
       <div className={styles.reset}>
         <p>Don’t have an account?</p>
         <a href="#">Sign up now</a>

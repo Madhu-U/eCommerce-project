@@ -8,6 +8,30 @@ nav {
     left: 1%;
     cursor: pointer;
   }
+  .logoutBtn {
+    height: 30px;
+    width: 100px;
+    border-radius: 50rem;
+    border: none;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    bottom: 25%;
+    left: 1%;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      scale: 1.1;
+      background-color: var(--clr-light);
+      color: var(--clr-dark);
+    }
+    &:active {
+      scale: 1;
+    }
+  }
 }
 
 nav ul {
@@ -18,7 +42,7 @@ nav ul {
   top: 20%;
   left: 1%;
   text-align: center;
-  height: 59vh;
+  /* height: 59vh; */
   border-radius: 50rem;
   display: flex;
   flex-direction: column;
