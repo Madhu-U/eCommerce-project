@@ -108,4 +108,24 @@
       }
     }
   }
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 90vw;
+    display: grid;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.3s ease forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

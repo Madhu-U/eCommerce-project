@@ -1,0 +1,185 @@
+.paymentContainer {
+  display: flex;
+  gap: 3rem;
+  margin-block: 1rem;
+  animation: popupIn 0.3s ease forwards;
+  justify-content: center;
+  width: 70%;
+  margin-inline: auto;
+  font-family: var(--ff-main);
+  color: var(--clr-dark);
+  > div {
+    background-color: var(--clr-light);
+  }
+
+  .closeIcon {
+    display: block;
+    height: fit-content;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background-color: var(--clr-dark);
+    &:hover {
+      scale: 1.1;
+    }
+    &:active {
+      scale: 1;
+    }
+    img {
+      width: 15px;
+      height: 15px;
+      margin: 1rem;
+    }
+  }
+
+  header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .orderSummary {
+    > div {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      text-align: center;
+      margin-block: 1rem;
+    }
+    .orderTotal {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--clr-dark);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: 5%;
+    }
+
+    .terms {
+      font-size: 0.8rem;
+      border-top: 1px solid var(--clr-dark);
+      padding-top: 0.5rem;
+      margin-top: 1rem;
+    }
+    .payBtn {
+      width: 200px;
+      height: 40px;
+      border-radius: 50rem;
+      border: none;
+      background-color: var(--clr-dark);
+      color: var(--clr-light);
+      display: block;
+      margin-inline: auto 5%;
+      margin-top: 1rem;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      &:hover {
+        scale: 1.1;
+        background-color: var(--clr-light);
+        color: var(--clr-dark);
+      }
+      &:active {
+        scale: 1;
+      }
+    }
+  }
+  .address {
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 500px;
+    height: fit-content;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    h1 {
+      margin-bottom: 1rem;
+    }
+    h2 {
+      border-bottom: 1px solid var(--clr-dark);
+      padding-bottom: 1rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      margin-block: 2rem;
+      gap: 1rem;
+      input {
+        padding: 1rem;
+        font-size: 1rem;
+      }
+      input[type="submit"] {
+        background-color: var(--clr-dark);
+        color: var(--clr-light);
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+          scale: 1.1;
+          background-color: var(--clr-light);
+          color: var(--clr-dark);
+        }
+        &:active {
+          scale: 1;
+        }
+      }
+    }
+  }
+  .paymentOptions {
+    padding: 2rem;
+    border-radius: 1rem;
+    height: fit-content;
+    width: 700px;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    h1 {
+      margin-bottom: 1rem;
+    }
+    h2 {
+      border-bottom: 1px solid var(--clr-dark);
+      padding-bottom: 1rem;
+    }
+    > p {
+      margin-block: 1rem;
+    }
+    .radioGroup {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: center;
+      margin-block: 1rem;
+
+      & input[type="radio"] {
+        display: none;
+      }
+
+      label {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        border: 2px solid var(--clr-dark);
+        border-radius: 2rem;
+        cursor: pointer;
+        background-color: var(--clr-light);
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+      input[type="radio"]:checked + label {
+        background-color: var(--clr-dark);
+        color: var(--clr-light);
+      }
+    }
+  }
+}
+
+@keyframes popupIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
