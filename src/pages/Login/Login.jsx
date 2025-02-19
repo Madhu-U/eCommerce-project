@@ -14,10 +14,12 @@ const Login = () => {
 
   const [users, setUsers] = useState([]);
   const [errorDisplay, setErrorDisplay] = useState({});
-  const [signUpSuccess, setSignUpSuccess] = useState(false);
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
   const { email, password } = loginValues;
-  const { setLoggedIn } = useContext(ProductContext);
+  const { setLoggedIn, currentUser, setCurrentUser } =
+    useContext(ProductContext);
+
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -68,11 +70,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let errors = validateForm();
+    const currUser = users.find((x) => x.email === email);
     if (Object.keys(errors).length === 0) {
       const submitStatus = checkLogin();
       if (submitStatus) {
         setLoggedIn(true);
-        setSignUpSuccess(!signUpSuccess);
+        setLoginSuccess(!loginSuccess);
+        setCurrentUser(currUser);
         console.log("Login successful");
         setTimeout(() => {
           navigate("/");
@@ -90,9 +94,9 @@ const Login = () => {
   };
 
   const checkLogin = () => {
-    const currentUser = users.find((x) => x.email === email);
-    if (currentUser) {
-      if (currentUser.password !== password) {
+    const current = users.find((x) => x.email === email);
+    if (current) {
+      if (current.password !== password) {
         return false;
       }
       return true;
@@ -132,9 +136,7 @@ const Login = () => {
       {errorDisplay["password"] && <span>{errorDisplay["password"]}</span>}
       <input type="submit" value="Submit" className={styles.submit} />
       {errorDisplay["submit"] && <span>{errorDisplay["submit"]}</span>}
-      {signUpSuccess && (
-        <div className={styles.success}>Sign Up Successful</div>
-      )}
+      {loginSuccess && <div className={styles.success}>Sign Up Successful</div>}
       <div className={styles.reset}>
         <p>Don’t have an account?</p>
         <a href="#">Sign up now</a>

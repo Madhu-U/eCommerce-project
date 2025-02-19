@@ -76,7 +76,7 @@ const Nav = () => {
             onClick={() => setLoggedIn(false)}
             className={styles.logoutBtn}
           >
-            Logout
+            Log out
           </button>
         )}
       </nav>

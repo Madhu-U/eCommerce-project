@@ -8,6 +8,7 @@ const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState(data);
   const [cart, setCart] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
 
   const toggleCartItem = (product) => {
     const isInCart = cart.find((item) => item.id === product.id);
@@ -26,6 +27,8 @@ const ProductProvider = ({ children }) => {
         toggleCartItem,
         loggedIn,
         setLoggedIn,
+        currentUser,
+        setCurrentUser,
       }}
     >
       {children}
