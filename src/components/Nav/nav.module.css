@@ -2,10 +2,10 @@ nav {
   width: 10%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   img {
-    width: 100px;
+    width: 150px;
     position: fixed;
-    top: 5%;
-    left: 1%;
+    top: 6%;
+    left: 0%;
     cursor: pointer;
   }
   .logoutBtn {
